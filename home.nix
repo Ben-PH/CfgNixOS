@@ -26,8 +26,9 @@
     fzf
     gitui
     tree
-    # markdown previewer in terminal
-    glow 
+    tmux
+    ncdu
+    glow # markdown previewer in terminal
     mdcat
 
     # networking tools
