@@ -1,13 +1,15 @@
 { config, pkgs, ... }:
 
 {
-
   home = {
     username = "ben3";
     homeDirectory = "/home/${config.home.username}";
   };
 
-  # Packages that should be installed to the user profile.
+  imports = [
+    ./neovim.nix
+  ];
+
   home.packages = with pkgs; [
 
     # neofetch -- use `nix shell nixpkgs#neofetch -c neofetch` instead

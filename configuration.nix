@@ -47,17 +47,14 @@
     isNormalUser = true;
     description = "ben3";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = [ pkgs.home-manager ];
+    packages = with pkgs; [ 
+      home-manager
+      git
+    ];
 
     openssh.authorizedKeys.keys = [
       "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC9h/vRbWwcw6QuFuyDNEh/nU22KaQXbkdl02tW2hJBt+lykB8HjrYWrIIN1IkK9qlMZMwCWK/iRtXIrwEbsVwInNCHw3iAIk1Xf1xQXHcPVdLJnkw/aLkRLgjwbzCYpp7aGG7oRuPqVoNDvdBTCgItrj+B8j/ybuBfc4HU/QYXMm7yos9hr65php96RUZ9HnvNb3ZqOaDvcU+S3bUsEQl3yBfyiS5Rfv8d0ESTRRkzu5dEUxBO37bzpPREnMiNK9XdehH8yBczjZDxViAiHZp1k/zYC5VyzJnmlOHyGs/9lKbBNkCuTxrLA/zOwr3RHfrp8x8pSnyIKFCuZFw/pDrD7GU+TOZw5+j6pBUvijOmFF/7PwJo/y1jjVcoFdktvArQP50v+G7Cn5TF2FN9kP6N+ECH3Rph7YIfuqkBUgKQyPPYBwRdkQZMt1QaLbGQ/IYJknu8PCCIPeKCIL7CHcqrGG7tjzIa9+myLfRK3Iv0jHAxiVYCH5E7iIKW9fRuQnv8EU1RFAATmaDXlVpCJMsou/V2tiQLSsem2RxSBBPM1iCchESDQGFnZ4vSoSFidJ0rx+RqVy96Sgrjzrx7TetyE+vMeyZYByIt8aXA23QgW1c45M5U3pTROAA1kG81wLTt79oA5O6OHlNDw4ltHBGV1KuE9aaJg44SpJfPYgdabQ== benphawke@gmail.com"
     ];
-  };
-  programs.git = {
-    enable = true;
-    extraConfig = {
-      "core.editor" = "vim";
-    };
   };
 
 
