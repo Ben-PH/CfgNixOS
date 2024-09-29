@@ -4,16 +4,13 @@
 
   home = {
     username = "ben3";
-    # TODO: make this use string interpolation
-    homeDirectory = "/home/ben3";
+    homeDirectory = "/home/${config.home.username}";
   };
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-    # here is some command line tools I use frequently
-    # feel free to add your own or remove some of them
 
-    neofetch
+    # neofetch -- use `nix shell nixpkgs#neofetch -c neofetch` instead
     yazi
 
     # archives
@@ -23,13 +20,13 @@
     p7zip
 
     # utils
-    ripgrep # recursively searches directories for a regex pattern
-    jq # A lightweight and flexible command-line JSON processor
-    yq-go # yaml processor https://github.com/mikefarah/yq
-    eza # A modern replacement for ‘ls’
-    fzf # A command-line fuzzy finder
+    ripgrep
+    fzf
     gitui
-    neovim
+    tree
+    # markdown previewer in terminal
+    glow 
+    mdcat
 
     # networking tools
     # mtr # A network diagnostic tool
@@ -41,11 +38,6 @@
     # nmap # A utility for network discovery and security auditing
     # ipcalc  # it is a calculator for the IPv4/v6 addresses
 
-    # misc
-    cowsay
-    file
-    which
-    tree
 
     # nix related
     #
@@ -53,8 +45,6 @@
     # with more details log output
     nix-output-monitor
 
-    # productivity
-    glow # markdown previewer in terminal
 
     btop  # replacement of htop/nmon
     iotop # io monitoring
