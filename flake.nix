@@ -26,6 +26,19 @@
         ];
         specialArgs = { inherit inputs ; };
       };
+      spokii = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+	  ./machines/spokii/configuration.nix
+	  home-manager.nixosModules.home-manager
+	  {
+	    home-manager.useGlobalPkgs = true;
+	    home-manager.useUserPackages = true;
+	    home-manager.users.ben = import ./home.nix;
+	  }
+        ];
+        specialArgs = { inherit inputs ; };
+      };
     };
   };
 }
