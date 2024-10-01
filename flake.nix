@@ -21,7 +21,7 @@
 	  {
 	    home-manager.useGlobalPkgs = true;
 	    home-manager.useUserPackages = true;
-	    home-manager.users.ben3 = import ./home.nix;
+	    home-manager.users.ben = import ./home.nix;
 	  }
         ];
         specialArgs = { inherit inputs ; };
