@@ -7,7 +7,7 @@
 {
   imports = [ 
     inputs.home-manager.nixosModules.home-manager
-    ./locale.nix
+    ../locale.nix
     ./boot.nix
     ./hardware-configuration.nix
   ];
@@ -43,12 +43,11 @@
   };
 
   # Sys level user settings
-  users.users.ben3 = {
+  users.users.ben = {
     isNormalUser = true;
-    description = "ben3";
+    description = "ben";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [ 
-      home-manager
       git
     ];
 

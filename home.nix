@@ -2,7 +2,7 @@
 
 {
   home = {
-    username = "ben3";
+    username = "ben";
     homeDirectory = "/home/${config.home.username}";
   };
 
