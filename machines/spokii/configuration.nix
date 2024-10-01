@@ -12,6 +12,31 @@
     ./hardware-configuration.nix
   ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  services.xserver = {
+    enable = true;
+    desktopManager.xterm.enable = false;
+    displayManager = {
+      startx.enable = true;
+      lightdm.enable = true;
+      defaultSession = "none+i3";
+    };
+
+    windowManager.i3 = {
+      enable = true;
+      extraPackages = with pkgs; [
+        dmenu
+        i3status
+        i3lock
+      ];
+    };
+
+    xkb = {
+      layout = "us";
+      variant = "dvorak";
+    };
+  };
+
+  fonts.fonts = [pkgs.dejavu_fonts];
 
   networking.hostName = "spokii";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -22,11 +47,6 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "dvorak";
-  };
 
   # Configure console keymap
   console.keyMap = "dvorak";
