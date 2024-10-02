@@ -51,7 +51,7 @@ bindsym $mod+Shift+apostrophe kill
 # bindsym $mod+e exec --no-startup-id SHELL=/usr/bin/bash dmenu_run
 
 # A more modern dmenu replacement is rofi:
-# bindcode $mod+40 exec "rofi -modi drun,run -show drun"
+bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 
 # change focus
 bindsym $mod+h focus left
