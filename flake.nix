@@ -8,6 +8,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
@@ -32,7 +36,7 @@
 	  ./machines/spokii/configuration.nix
 	  home-manager.nixosModules.home-manager
 	  {
-	    home-manager.users.ben = import ./machines/spokii/home.nix;
+	    home-manager.users.ben = import ./machines/spokii/home;
 	  }
         ];
         specialArgs = { inherit inputs ; };
