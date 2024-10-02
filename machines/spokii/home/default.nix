@@ -20,7 +20,10 @@
     # neofetch -- use `nix shell nixpkgs#neofetch -c neofetch` instead
     yazi
 
+    # needs unfree. done in configuration.nix at time of writing
     discord
+    # Needed for LM studio
+    appimage-run
 
     # archives
     zip
