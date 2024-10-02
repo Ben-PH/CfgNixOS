@@ -20,6 +20,8 @@
     # neofetch -- use `nix shell nixpkgs#neofetch -c neofetch` instead
     yazi
 
+    discord
+
     # archives
     zip
     xz
