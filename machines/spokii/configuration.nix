@@ -21,6 +21,7 @@
       defaultSession = "none+i3";
     };
 
+    # TODO?: Move this to HM
     windowManager.i3 = {
       enable = true;
       extraPackages = with pkgs; [
@@ -28,6 +29,7 @@
         i3status
         i3lock
       ];
+      configFile = ./i3config;
     };
 
     xkb = {
