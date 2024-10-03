@@ -66,10 +66,10 @@
   console.keyMap = "dvorak";
 
   environment = {
-    systemPackages = [
-      pkgs.vim
-      pkgs.rustic
-
+    systemPackages = with pkgs; [
+      vim
+      rustic
+      mdadm
     ];
     variables.EDITOR = "vim";
   };
