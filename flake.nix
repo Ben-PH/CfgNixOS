@@ -41,6 +41,14 @@
         ];
         specialArgs = { inherit inputs ; };
       };
+      iso = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+	  ./machines/iso/configuration.nix
+        ];
+        specialArgs = { inherit inputs ; };
+      };
+
     };
   };
 }
