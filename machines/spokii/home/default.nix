@@ -11,7 +11,7 @@
   };
 
   imports = [
-    ../../../neovim.nix
+    ../../../neovim
     ./firefox.nix
     ./nushell.nix
   ];
@@ -20,6 +20,7 @@
 
     # neofetch -- use `nix shell nixpkgs#neofetch -c neofetch` instead
     yazi
+    fzf
 
     # needs unfree. done in configuration.nix at time of writing
     discord
