@@ -13,6 +13,7 @@
   imports = [
     ../../../neovim.nix
     ./firefox.nix
+    ./nushell.nix
   ];
 
   home.packages = with pkgs; [

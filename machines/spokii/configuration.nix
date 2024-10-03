@@ -80,6 +80,7 @@
     packages = with pkgs; [ 
       git
     ];
+    shell = pkgs.nushell;
 
     openssh.authorizedKeys.keys = [ ];
   };
