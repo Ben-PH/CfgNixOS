@@ -9,6 +9,9 @@
     builtins.elem (lib.getName pkg) [
       # Add additional package names here
       "discord"
+      "steam"
+      "steam-original"
+      "steam-run"
     ];
   imports = [ 
     inputs.home-manager.nixosModules.home-manager
@@ -39,6 +42,7 @@
       ];
       configFile = ./i3config;
     };
+    videoDrivers = ["amdgpu"];
 
     xkb = {
       layout = "us";
@@ -64,6 +68,8 @@
   environment = {
     systemPackages = [
       pkgs.vim
+      pkgs.rustic
+
     ];
     variables.EDITOR = "vim";
   };
@@ -93,6 +99,14 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+  programs.steam = {
+    enable = true;
+    gamescopeSession.enable = true;
+  };
+  # programs.gamemode.enable = true;
+
+
+
 
   # List services that you want to enable:
 
