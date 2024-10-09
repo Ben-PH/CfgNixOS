@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   home = {
     username = "ben";
     homeDirectory = "/home/${config.home.username}";
@@ -11,7 +13,6 @@
   ];
 
   home.packages = with pkgs; [
-
     # neofetch -- use `nix shell nixpkgs#neofetch -c neofetch` instead
     yazi
 
@@ -41,15 +42,13 @@
     # nmap # A utility for network discovery and security auditing
     # ipcalc  # it is a calculator for the IPv4/v6 addresses
 
-
     # nix related
     #
     # it provides the command `nom` works just like `nix`
     # with more details log output
     nix-output-monitor
 
-
-    btop  # replacement of htop/nmon
+    btop # replacement of htop/nmon
     iotop # io monitoring
     iftop # network monitoring
 
@@ -72,7 +71,6 @@
     userName = "Ben-PH";
     userEmail = "benphawke@gmail.com";
   };
-
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

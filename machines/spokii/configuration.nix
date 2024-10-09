@@ -1,10 +1,14 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{lib,  inputs, outputs, config, pkgs, ... }:
-
 {
+  lib,
+  inputs,
+  outputs,
+  config,
+  pkgs,
+  ...
+}: {
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
       # Add additional package names here
@@ -13,14 +17,14 @@
       "steam-original"
       "steam-run"
     ];
-  imports = [ 
+  imports = [
     inputs.home-manager.nixosModules.home-manager
     ../locale.nix
     ./boot.nix
     ./hardware-configuration.nix
   ];
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
   services.xserver = {
@@ -75,22 +79,21 @@
   };
   home-manager = {
     useGlobalPkgs = true;
-    extraSpecialArgs = { inherit inputs outputs; };
+    extraSpecialArgs = {inherit inputs outputs;};
   };
 
   # Sys level user settings
   users.users.ben = {
     isNormalUser = true;
     description = "ben";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [ 
+    extraGroups = ["networkmanager" "wheel"];
+    packages = with pkgs; [
       git
     ];
     shell = pkgs.nushell;
 
-    openssh.authorizedKeys.keys = [ ];
+    openssh.authorizedKeys.keys = [];
   };
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -104,9 +107,6 @@
     gamescopeSession.enable = true;
   };
   # programs.gamemode.enable = true;
-
-
-
 
   # List services that you want to enable:
 
@@ -132,5 +132,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
-
 }

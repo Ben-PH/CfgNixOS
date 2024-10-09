@@ -1,17 +1,20 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ inputs, outputs, config, pkgs, ... }:
-
 {
-  imports = [ 
+  inputs,
+  outputs,
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
     inputs.home-manager.nixosModules.home-manager
     ../locale.nix
     ./boot.nix
     ./hardware-configuration.nix
   ];
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   networking.hostName = "vbox";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -39,15 +42,15 @@
   };
   home-manager = {
     useGlobalPkgs = true;
-    extraSpecialArgs = { inherit inputs outputs; };
+    extraSpecialArgs = {inherit inputs outputs;};
   };
 
   # Sys level user settings
   users.users.ben = {
     isNormalUser = true;
     description = "ben";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [ 
+    extraGroups = ["networkmanager" "wheel"];
+    packages = with pkgs; [
       git
     ];
 
@@ -55,7 +58,6 @@
       "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC9h/vRbWwcw6QuFuyDNEh/nU22KaQXbkdl02tW2hJBt+lykB8HjrYWrIIN1IkK9qlMZMwCWK/iRtXIrwEbsVwInNCHw3iAIk1Xf1xQXHcPVdLJnkw/aLkRLgjwbzCYpp7aGG7oRuPqVoNDvdBTCgItrj+B8j/ybuBfc4HU/QYXMm7yos9hr65php96RUZ9HnvNb3ZqOaDvcU+S3bUsEQl3yBfyiS5Rfv8d0ESTRRkzu5dEUxBO37bzpPREnMiNK9XdehH8yBczjZDxViAiHZp1k/zYC5VyzJnmlOHyGs/9lKbBNkCuTxrLA/zOwr3RHfrp8x8pSnyIKFCuZFw/pDrD7GU+TOZw5+j6pBUvijOmFF/7PwJo/y1jjVcoFdktvArQP50v+G7Cn5TF2FN9kP6N+ECH3Rph7YIfuqkBUgKQyPPYBwRdkQZMt1QaLbGQ/IYJknu8PCCIPeKCIL7CHcqrGG7tjzIa9+myLfRK3Iv0jHAxiVYCH5E7iIKW9fRuQnv8EU1RFAATmaDXlVpCJMsou/V2tiQLSsem2RxSBBPM1iCchESDQGFnZ4vSoSFidJ0rx+RqVy96Sgrjzrx7TetyE+vMeyZYByIt8aXA23QgW1c45M5U3pTROAA1kG81wLTt79oA5O6OHlNDw4ltHBGV1KuE9aaJg44SpJfPYgdabQ== benphawke@gmail.com"
     ];
   };
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -89,5 +91,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
-
 }

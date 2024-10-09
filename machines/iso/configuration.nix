@@ -1,12 +1,17 @@
-{ inputs, modulesPath, outputs, config, pkgs, ... }:
-
 {
-  imports = [ 
+  inputs,
+  modulesPath,
+  outputs,
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
     ../locale.nix
     "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
   ];
   nixpkgs.hostPlatform = "x86_64-linux";
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -34,5 +39,4 @@
   };
 
   system.stateVersion = "24.05"; # Did you read the comment?
-
 }

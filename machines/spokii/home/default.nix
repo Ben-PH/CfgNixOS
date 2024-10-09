@@ -1,10 +1,10 @@
 # For now, this is ben@spokii and that's that. As things get complicated, I'll start moving things around
 # Naturally, this is a home-manager import
-
-{ config, pkgs, ... }:
-
 {
-
+  config,
+  pkgs,
+  ...
+}: {
   home = {
     username = "ben";
     homeDirectory = "/home/${config.home.username}";
@@ -17,7 +17,6 @@
   ];
 
   home.packages = with pkgs; [
-
     # neofetch -- use `nix shell nixpkgs#neofetch -c neofetch` instead
     yazi
     fzf
@@ -42,6 +41,7 @@
     ncdu
     glow # markdown previewer in terminal
     mdcat
+    direnv
 
     alacritty
     rofi
@@ -58,15 +58,13 @@
     # nmap # A utility for network discovery and security auditing
     # ipcalc  # it is a calculator for the IPv4/v6 addresses
 
-
     # nix related
     #
     # it provides the command `nom` works just like `nix`
     # with more details log output
     nix-output-monitor
 
-
-    btop  # replacement of htop/nmon
+    btop # replacement of htop/nmon
     iotop # io monitoring
     iftop # network monitoring
 
@@ -105,14 +103,13 @@
   #       urgent_workspace = "#333333 # 900000#ffffff";
   #     };
   #   };
-  # };  
+  # };
 
   # TODO
   # fonts.fontconfig = {
   #   enable = true;
   #   defaultFonts = { family = "DejaVu Sans Mono"; size = 10; };
   # };
-
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

@@ -14,41 +14,44 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
-  {
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    ...
+  } @ inputs: {
     nixosConfigurations = {
       vbox = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-	  ./machines/vbox/configuration.nix
-	  home-manager.nixosModules.home-manager
-	  {
-	    home-manager.useGlobalPkgs = true;
-	    home-manager.useUserPackages = true;
-	    home-manager.users.ben = import ./home.nix;
-	  }
+          ./machines/vbox/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.ben = import ./home.nix;
+          }
         ];
-        specialArgs = { inherit inputs ; };
+        specialArgs = {inherit inputs;};
       };
       spokii = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-	  ./machines/spokii/configuration.nix
-	  home-manager.nixosModules.home-manager
-	  {
-	    home-manager.users.ben = import ./machines/spokii/home;
-	  }
+          ./machines/spokii/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.users.ben = import ./machines/spokii/home;
+          }
         ];
-        specialArgs = { inherit inputs ; };
+        specialArgs = {inherit inputs;};
       };
       iso = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-	  ./machines/iso/configuration.nix
+          ./machines/iso/configuration.nix
         ];
-        specialArgs = { inherit inputs ; };
+        specialArgs = {inherit inputs;};
       };
-
     };
   };
 }
