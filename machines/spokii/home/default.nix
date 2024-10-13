@@ -8,6 +8,10 @@
   home = {
     username = "ben";
     homeDirectory = "/home/${config.home.username}";
+    keyboard = {
+      layout = "us";
+      variant = "dvorak";
+    };
   };
 
   imports = [
@@ -15,6 +19,28 @@
     ./firefox.nix
     ./nushell.nix
   ];
+
+  # xsession.windowManager.i3 = {
+  #   enable = true;
+  #   # extraPackages = with pkgs; [
+  #   #   dmenu
+  #   #   i3status
+  #   #   i3lock
+  #   # ];
+  #   # configFile = ./i3config;
+  # };
+  wayland.windowManager.sway = {
+    enable = true;
+    config = rec {
+      # modifier = "Mod4";
+      # Use kitty as default terminal
+      # terminal = "alacritty";
+      # startup = [
+      #   # Launch Firefox on start
+      #   {command = "firefox";}
+      # ];
+    };
+  };
 
   home.packages = with pkgs; [
     # neofetch -- use `nix shell nixpkgs#neofetch -c neofetch` instead

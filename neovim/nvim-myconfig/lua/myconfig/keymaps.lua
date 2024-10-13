@@ -6,7 +6,35 @@ M.wk = function()
 	return require("which-key")
 end
 
-M.rust_bindings = function()
+M.lsprust_bundings = function()
+	return {
+		-- TODO: make use of the bang = true to repeat previous
+		{ "J", function() vim.cmd.RustLsp("joinLines") end, desc = "RST: Line join", hidden = true },
+		{ "<A-a>", function() vim.cmd.RustLsp("codeAction") end, desc = "RST: Action" },
+		{ "<A-H>", function() vim.cmd.RustLsp{"hover", "action"} end, desc = "RST: ???" },
+		{ "<A-r>", function() vim.cmd.RustLsp{"hover", "range"} end, desc = "RST: ???" },
+		{ "<leader>rc", function() vim.cmd.RustLsp("openCargo") end, desc = "RST: Cargo open file" },
+		{ "<leader>rC", function() vim.cmd.RustLsp("renderDiagnostic") end, desc = "RST: Cargo render" },
+		{ "<leader>rd", function() vim.cmd.RustLsp("debuggables") end, desc = "RST: Debuggables" },
+		{ "<leader>rfs", function() vim.cmd.RustLsp("workspaceSymbol") end, desc = "RST: find symbols" },
+		{ "<leader>rhh", ":h rustaceanvim<cr>", desc = "RST: Help" },
+		{ "<leader>rhd", function() vim.cmd.RustLsp("openDocs") end, desc = "RST: Open doc under cursor" },
+		-- TODO: optional '<onlyTypes|allSymbols>', '<query>', or bang = true
+		-- : 
+		-- { "<leader>rfS", function() vim.cmd.RustLsp("workspaceSymbol") end, desc = "RST: Debuggables" },
+		{ "<leader>rR", function() vim.cmd.RustLsp("runnables") end, desc = "RST: Runnables" },
+		{ "<leader>rr", function() vim.cmd.RustLsp("run") end, desc = "RST: Run" },
+		{ "<leader>rt", function() vim.cmd.RustLsp("testables") end, desc = "RST: Testables" },
+		{ "<leader>rgk", function() vim.cmd.RustLsp("parentModule") end, desc = "RST: Module Up" },
+		{ "<leader>rM", function() vim.cmd.RustLsp("expandMacro") end, desc = "RST: MacroExpand" },
+		{ "<A-e>", function() vim.cmd.RustLsp ( "explainError" ) end, desc = "RST: Error explain" },
+		{ "<A-K>", function() vim.cmd.RustLsp { "moveItem", "up" } end, desc = "RST: Mv ↑" },
+		{ "<A-J>", function() vim.cmd.RustLsp { "moveItem", "down" } end, desc = "RST: Mv ↓" },
+		{ "<leader>rR", function() vim.cmd.RustLsp { "ssr"--[[ , "<query>" ]] } end, desc = "RST: SED smartly" },
+		-- todo: continue going through https://github.com/mrcjkb/rustaceanvim?tab=readme-ov-file#books-usage--features and adding
+	}
+end
+M.rustaceanvim_bindings = function()
 	return {
 		-- TODO: make use of the bang = true to repeat previous
 		{ "J", function() vim.cmd.RustLsp("joinLines") end, desc = "RST: Line join", hidden = true },

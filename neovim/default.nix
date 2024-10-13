@@ -91,6 +91,11 @@
           plugin = nvim-lspconfig;
           config = toLuaFile ./lspconfig.lua;
         }
+        # rustaceanvim
+        # {
+        #   plugin = rustaceanvim;
+        #   config = toLuaFile ./rustaceanvim.lua;  # Optional custom config
+        # }
       ];
     };
   };

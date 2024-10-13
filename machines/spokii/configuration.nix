@@ -24,28 +24,32 @@
     ./hardware-configuration.nix
   ];
   nix.settings.experimental-features = ["nix-command" "flakes"];
+  security.polkit.enable = true;
 
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
+  services.displayManager.defaultSession = "none+i3";
+
   services.xserver = {
     enable = true;
+    windowManager.i3.enable = true;
     desktopManager.xterm.enable = false;
     displayManager = {
-      startx.enable = true;
-      lightdm.enable = true;
+      #   startx.enable = true;
+      gdm.enable = true;
       defaultSession = "none+i3";
     };
 
     # TODO?: Move this to HM
-    windowManager.i3 = {
-      enable = true;
-      extraPackages = with pkgs; [
-        dmenu
-        i3status
-        i3lock
-      ];
-      configFile = ./i3config;
-    };
+    # windowManager.i3 = {
+    #   enable = true;
+    #   extraPackages = with pkgs; [
+    #     dmenu
+    #     i3status
+    #     i3lock
+    #   ];
+    #   configFile = ./i3config;
+    # };
     videoDrivers = ["amdgpu"];
 
     xkb = {

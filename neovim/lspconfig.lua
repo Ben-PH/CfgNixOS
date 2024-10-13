@@ -46,3 +46,13 @@ require('lspconfig').nil_ls.setup {
     capabilities = capabilities,
     cmd = { lsp_path },
 }
+require('lspconfig').rust_analyzer.setup{
+    settings = {
+        ["rust-analyzer"] = {
+            cargo = { allFeatures = true },
+            checkOnSave = {
+                command = "clippy" -- Optionally use Clippy for checks
+            },
+        }
+    }
+}
