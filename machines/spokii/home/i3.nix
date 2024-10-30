@@ -41,6 +41,7 @@ in {
 
         # split in horizontal orientation
         "${mod}+d" = "split h";
+        "${mod}+r" = ''exec "rofi -modi drun,run -show drun"'';
 
         # split in vertical orientation
         "${mod}+k" = "split v";
@@ -140,12 +141,8 @@ in {
       # Use Mouse+$mod to drag floating windows to their wanted position
       # floating_modifier $mod
 
-      # start dmenu (a program launcher)
-      # TODO: sort this out or better, use rofi
-      # bindsym $mod+e exec --no-startup-id SHELL=/usr/bin/bash dmenu_run
 
       # A more modern dmenu replacement is rofi:
-      bindcode Mod4+40 exec "rofi -modi drun,run -show drun"
 
 
 
