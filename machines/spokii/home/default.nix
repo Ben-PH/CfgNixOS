@@ -18,6 +18,7 @@
     ../../../neovim
     ./firefox.nix
     ./nushell.nix
+    ./i3.nix
   ];
 
   # xsession.windowManager.i3 = {
@@ -118,22 +119,12 @@
     userEmail = "benphawke@gmail.com";
   };
 
-  # programs.i3 = {
-  #   enable = true;
-  #   font = "pango:DejaVu Sans Mono 10";
-  #   bar = {
-  #     status_command = "i3status";
-  #     colors = {
-  #       background = "#282c34";
-  #       statusline = "#ffffff";
-  #       separator = "#666666";
-  #       focused_workspace = "#4c7899 #285577 #ffffff";
-  #       active_workspace = "#333333 #5f676a #ffffff";
-  #       inactive_workspace = "#282c34 #282c34 #888888";
-  #       urgent_workspace = "#333333 # 900000#ffffff";
-  #     };
-  #   };
-  # };
+  xsession.windowManager.i3 = {
+    enable = true;
+  };
+  programs.i3status-rust = {
+    enable = true;
+  };
 
   # TODO
   # fonts.fontconfig = {
