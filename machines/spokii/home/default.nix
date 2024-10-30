@@ -45,7 +45,9 @@
   home.packages = with pkgs; [
     # neofetch -- use `nix shell nixpkgs#neofetch -c neofetch` instead
     yazi
-    fzf
+    cargo
+
+    flameshot
 
     # needs unfree. done in configuration.nix at time of writing
     discord
@@ -62,8 +64,10 @@
     ripgrep
     fzf
     gitui
+    bacon
+
     tree
-    tmux
+    ripgrep
     ncdu
     glow # markdown previewer in terminal
     mdcat

@@ -93,6 +93,7 @@
     extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
       git
+      zellij
     ];
     shell = pkgs.nushell;
 
@@ -129,6 +130,11 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
+  # use switch-to-configuration-ng
+  system.switch = {
+    enable = false;
+    enableNg = true;
+  };
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

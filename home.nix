@@ -27,7 +27,7 @@
     fzf
     gitui
     tree
-    tmux
+    zellij
     ncdu
     glow # markdown previewer in terminal
     mdcat
