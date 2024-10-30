@@ -47,6 +47,7 @@
         system = "x86_64-linux";
         modules = [
           ./machines/spokii/configuration.nix
+          # TODO: Make sense of the machine-sys-home divide
           inputs.home-manager.nixosModules.home-manager
           {
             home-manager.users.ben = import ./machines/spokii/home;

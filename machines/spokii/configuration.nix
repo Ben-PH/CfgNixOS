@@ -75,6 +75,10 @@
 
   environment = {
     systemPackages = with pkgs; [
+      # `nixos-rebuild` alternative
+      nh
+      # `find` alternative
+      fd
       vim
       rustic
       mdadm
@@ -93,7 +97,6 @@
     extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
       git
-      zellij
     ];
     shell = pkgs.nushell;
 

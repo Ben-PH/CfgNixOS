@@ -47,6 +47,7 @@
     # neofetch -- use `nix shell nixpkgs#neofetch -c neofetch` instead
     yazi
     cargo
+    zellij
 
     flameshot
 
@@ -66,9 +67,9 @@
     fzf
     gitui
     bacon
+    obsidian
 
     tree
-    ripgrep
     ncdu
     glow # markdown previewer in terminal
     mdcat
@@ -78,6 +79,7 @@
     rofi
     dunst
     papirus-icon-theme
+    nerdfonts
 
     # networking tools
     # mtr # A network diagnostic tool
