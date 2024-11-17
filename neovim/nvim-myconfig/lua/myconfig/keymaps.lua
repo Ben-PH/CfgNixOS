@@ -1,4 +1,6 @@
 --- Functons that delver wk-mappings
+-- Helper function to check if quickfix window is active
+
 
 local M = {}
 
@@ -213,17 +215,20 @@ end
 
 M.yazi = function()
 	return {
-		{
-			"<A-f>",
-			function() require("yazi").yazi(nil, vim.fn.expand("%:p:h")) end,
-			desc = "Open the file manager in nvim's working directory",
-		},
+		"<A-F>",
+		function() require("yazi").yazi(nil, vim.fn.expand("%:p:h")) end,
+		desc = "Open the file manager in nvim's working directory",
 	}
 end
 
 M.wk().add({
 	{ "<A-w>", function() M.wk().show() end, mode = "nixsotc", hidden = true },
-	{ "<A-W>", ":w<cr>" }
+	{ "<A-W>", ":w<cr>" },
+	{ "<A-g>", "<cmd>Telescope live_grep<CR>" },
+	{ "<A-f>", "<cmd>Telescope find_files<CR>" },
+	{ "<A-n>", ":cnext<CR>" },
+	{ "<A-N>", ":cprev<CR>" }
+
 })
 M.wk().add(M.which_key_hide())
 
