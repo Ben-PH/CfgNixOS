@@ -21,6 +21,20 @@
         toLua = str: "lua << EOF\n${str}\nEOF\n";
         toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
       in [
+	
+        {
+          plugin = nvim-autopairs;
+          config = toLua "require(\"nvim-autopairs\").setup()";
+        }
+
+        {
+          plugin = indent-blankline-nvim;
+          config = toLuaFile ./ibl.lua;
+        }
+        {
+          plugin = gitsigns-nvim;
+          config = toLua "require(\"gitsigns\").setup()";
+        }
         which-key-nvim
         (pkgs.vimUtils.buildVimPlugin {
           pname = "nvim-myconfig";

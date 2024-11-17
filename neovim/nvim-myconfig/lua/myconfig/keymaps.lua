@@ -63,12 +63,12 @@ M.rustaceanvim_bindings = function()
 	}
 end
 
-M.auto_session = function()
-	return {
-		{ '<A-s>', '<Cmd>Autosession search<CR>', desc = "Session search", hidden = true },
-		{ '<A-S>', '<Cmd>SessionRestore<CR>',     desc = "Session Restore" }
-	}
-end
+-- M.auto_session = function()
+-- 	return {
+-- 		{ '<A-s>', '<Cmd>Autosession search<CR>', desc = "Session search", hidden = true },
+-- 		{ '<A-S>', '<Cmd>SessionRestore<CR>',     desc = "Session Restore" }
+-- 	}
+-- end
 
 M.barbar = function()
 	return {

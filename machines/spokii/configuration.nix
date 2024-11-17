@@ -16,6 +16,7 @@
       "steam"
       "steam-original"
       "steam-run"
+      "obsidian"
     ];
   imports = [
     inputs.home-manager.nixosModules.home-manager
