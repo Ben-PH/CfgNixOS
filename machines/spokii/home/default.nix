@@ -52,7 +52,7 @@
     flameshot
 
     # needs unfree. done in configuration.nix at time of writing
-    discord
+    vesktop
     # Needed for LM studio
     appimage-run
 
