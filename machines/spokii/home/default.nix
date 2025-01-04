@@ -117,10 +117,11 @@
     pciutils # lspci
     usbutils # lsusb
 
-    haskellPackages.ghc
-    haskellPackages.cabal-install
-    haskellPackages.stack
-    haskell-language-server
+
+    # haskell.compiler.ghc910
+    # haskellPackages.cabal-install
+    # haskellPackages.stack
+    # haskell-language-server
   ];
 
   # basic configuration of git, please change to your own
