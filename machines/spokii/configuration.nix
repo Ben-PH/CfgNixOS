@@ -1,17 +1,64 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ inputs, outputs, config, pkgs, ... }:
-
 {
-  imports = [ 
+  lib,
+  inputs,
+  outputs,
+  config,
+  pkgs,
+  ...
+}: {
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (lib.getName pkg) [
+      # Add additional package names here
+      "steam"
+      "steam-original"
+      "steam-run"
+      "obsidian"
+    ];
+  imports = [
     inputs.home-manager.nixosModules.home-manager
     ../locale.nix
     ./boot.nix
     ./hardware-configuration.nix
   ];
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+  security.polkit.enable = true;
+
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
+  services.displayManager.defaultSession = "none+i3";
+
+  services.xserver = {
+    enable = true;
+    windowManager.i3.enable = true;
+    desktopManager.xterm.enable = false;
+    displayManager = {
+      #   startx.enable = true;
+      gdm.enable = true;
+      defaultSession = "none+i3";
+    };
+
+    # TODO?: Move this to HM
+    # windowManager.i3 = {
+    #   enable = true;
+    #   extraPackages = with pkgs; [
+    #     dmenu
+    #     i3status
+    #     i3lock
+    #   ];
+    #   configFile = ./i3config;
+    # };
+    videoDrivers = ["amdgpu"];
+
+    xkb = {
+      layout = "us";
+      variant = "dvorak";
+    };
+  };
+
+  fonts.fonts = [pkgs.dejavu_fonts];
 
   networking.hostName = "spokii";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -22,38 +69,39 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "dvorak";
-  };
 
   # Configure console keymap
   console.keyMap = "dvorak";
 
   environment = {
-    systemPackages = [
-      pkgs.vim
+    systemPackages = with pkgs; [
+      # `nixos-rebuild` alternative
+      nh
+      # `find` alternative
+      fd
+      vim
+      rustic
+      mdadm
     ];
     variables.EDITOR = "vim";
   };
   home-manager = {
     useGlobalPkgs = true;
-    extraSpecialArgs = { inherit inputs outputs; };
+    extraSpecialArgs = {inherit inputs outputs;};
   };
 
   # Sys level user settings
   users.users.ben = {
     isNormalUser = true;
     description = "ben";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [ 
+    extraGroups = ["networkmanager" "wheel"];
+    packages = with pkgs; [
       git
     ];
+    shell = pkgs.nushell;
 
-    openssh.authorizedKeys.keys = [ ];
+    openssh.authorizedKeys.keys = [];
   };
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -62,17 +110,22 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+  programs.steam = {
+    enable = true;
+    gamescopeSession.enable = true;
+  };
+  # programs.gamemode.enable = true;
 
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh = {
-    enable = true;
-    settings = {
-      PasswordAuthentication = false;
-      PermitRootLogin = "no";
-    };
-  };
+  # services.openssh = {
+  #   enable = true;
+  #   settings = {
+  #     PasswordAuthentication = false;
+  #     PermitRootLogin = "no";
+  #   };
+  # };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -80,6 +133,11 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
+  # use switch-to-configuration-ng
+  system.switch = {
+    enable = false;
+    enableNg = true;
+  };
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
@@ -87,5 +145,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
-
 }

@@ -1,3 +1,5 @@
+# For now, this is ben@spokii and that's that. As things get complicated, I'll start moving things around
+# Naturally, this is a home-manager import
 {
   config,
   pkgs,
@@ -6,15 +8,53 @@
   home = {
     username = "ben";
     homeDirectory = "/home/${config.home.username}";
+    keyboard = {
+      layout = "us";
+      variant = "dvorak";
+    };
   };
 
   imports = [
-    ./neovim.nix
+    ../../../neovim
+    ./firefox.nix
+    ./nushell.nix
+    ./i3.nix
   ];
+
+  # xsession.windowManager.i3 = {
+  #   enable = true;
+  #   # extraPackages = with pkgs; [
+  #   #   dmenu
+  #   #   i3status
+  #   #   i3lock
+  #   # ];
+  #   # configFile = ./i3config;
+  # };
+  wayland.windowManager.sway = {
+    enable = true;
+    config = rec {
+      # modifier = "Mod4";
+      # Use kitty as default terminal
+      # terminal = "alacritty";
+      # startup = [
+      #   # Launch Firefox on start
+      #   {command = "firefox";}
+      # ];
+    };
+  };
 
   home.packages = with pkgs; [
     # neofetch -- use `nix shell nixpkgs#neofetch -c neofetch` instead
     yazi
+    cargo
+    zellij
+
+    flameshot
+
+    # needs unfree. done in configuration.nix at time of writing
+    vesktop
+    # Needed for LM studio
+    appimage-run
 
     # archives
     zip
@@ -26,11 +66,24 @@
     ripgrep
     fzf
     gitui
+    bacon
+    obsidian
+
     tree
-    zellij
     ncdu
     glow # markdown previewer in terminal
     mdcat
+    direnv
+
+  
+    # blogging
+    zola
+
+    alacritty
+    rofi
+    dunst
+    papirus-icon-theme
+    nerdfonts
 
     # networking tools
     # mtr # A network diagnostic tool
@@ -63,6 +116,12 @@
     ethtool
     pciutils # lspci
     usbutils # lsusb
+
+
+    # haskell.compiler.ghc910
+    # haskellPackages.cabal-install
+    # haskellPackages.stack
+    # haskell-language-server
   ];
 
   # basic configuration of git, please change to your own
@@ -71,6 +130,19 @@
     userName = "Ben-PH";
     userEmail = "benphawke@gmail.com";
   };
+
+  xsession.windowManager.i3 = {
+    enable = true;
+  };
+  programs.i3status-rust = {
+    enable = true;
+  };
+
+  # TODO
+  # fonts.fontconfig = {
+  #   enable = true;
+  #   defaultFonts = { family = "DejaVu Sans Mono"; size = 10; };
+  # };
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

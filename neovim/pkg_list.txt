@@ -1,0 +1,153 @@
+Querying search.nixos.org, with channel nixos-unstable...
+Took 370ms
+Most relevant results at the end
+
+
+[34mvimPlugins.cmp_yanky[39m ([32m2024-09-22[39m)
+  Homepage: ]8;;https://github.com/chrisgrieser/cmp_yanky/[4mhttps://github.com/chrisgrieser/cmp_yanky/[0m]8;;
+  Position: ]8;;file:///nix/store/fpivx4sjcp2vk4rp9nhliln5cwcp3kc6-source
+/pkgs/applications/editors/vim/plugins/generated.nix[4mpkgs/applications/editors/vim/plugins/generated.nix:2194[0m]8;;
+
+[34mvimPlugins.clang_complete[39m ([32m2023-11-05[39m)
+  Homepage: ]8;;https://github.com/xavierd/clang_complete/[4mhttps://github.com/xavierd/clang_complete/[0m]8;;
+  Position: ]8;;file:///nix/store/fpivx4sjcp2vk4rp9nhliln5cwcp3kc6-source
+/pkgs/applications/editors/vim/plugins/generated.nix[4mpkgs/applications/editors/vim/plugins/generated.nix:1523[0m]8;;
+
+[34mvimPlugins.nvim-dbee[39m ([32m2024-07-26[39m)
+  Position: ]8;;file:///nix/store/fpivx4sjcp2vk4rp9nhliln5cwcp3kc6-source
+/pkgs/applications/editors/vim/plugins/generated.nix[4mpkgs/applications/editors/vim/plugins/generated.nix:8531[0m]8;;
+
+[34mvimPlugins.vim-test[39m ([32m2024-09-16[39m)
+  Homepage: ]8;;https://github.com/vim-test/vim-test/[4mhttps://github.com/vim-test/vim-test/[0m]8;;
+  Position: ]8;;file:///nix/store/fpivx4sjcp2vk4rp9nhliln5cwcp3kc6-source
+/pkgs/applications/editors/vim/plugins/generated.nix[4mpkgs/applications/editors/vim/plugins/generated.nix:16995[0m]8;;
+
+[34mvimPlugins.nvim-treesitter-parsers.gaptst[39m
+  Homepage: ]8;;https://github.com/gap-system/tree-sitter-gaptst[4mhttps://github.com/gap-system/tree-sitter-gaptst[0m]8;;
+  Position: ]8;;file:///nix/store/fpivx4sjcp2vk4rp9nhliln5cwcp3kc6-source
+/pkgs/applications/editors/vim/plugins/vim-utils.nix[4mpkgs/applications/editors/vim/plugins/vim-utils.nix:418[0m]8;;
+
+[34mvimPlugins.nvim-treesitter-parsers.func[39m
+  Homepage: ]8;;https://github.com/amaanq/tree-sitter-func[4mhttps://github.com/amaanq/tree-sitter-func[0m]8;;
+  Position: ]8;;file:///nix/store/fpivx4sjcp2vk4rp9nhliln5cwcp3kc6-source
+/pkgs/applications/editors/vim/plugins/vim-utils.nix[4mpkgs/applications/editors/vim/plugins/vim-utils.nix:418[0m]8;;
+
+[34mvimPlugins.termwrapper-nvim[39m ([32m2021-03-28[39m)
+  Homepage: ]8;;https://github.com/oberblastmeister/termwrapper.nvim/[4mhttps://github.com/oberblastmeister/termwrapper.nvim/[0m]8;;
+  Position: ]8;;file:///nix/store/fpivx4sjcp2vk4rp9nhliln5cwcp3kc6-source
+/pkgs/applications/editors/vim/plugins/generated.nix[4mpkgs/applications/editors/vim/plugins/generated.nix:11937[0m]8;;
+
+[34mvimPlugins.nvim-treesitter-parsers.liquid[39m
+  Homepage: ]8;;https://github.com/hankthetank27/tree-sitter-liquid[4mhttps://github.com/hankthetank27/tree-sitter-liquid[0m]8;;
+  Position: ]8;;file:///nix/store/fpivx4sjcp2vk4rp9nhliln5cwcp3kc6-source
+/pkgs/applications/editors/vim/plugins/vim-utils.nix[4mpkgs/applications/editors/vim/plugins/vim-utils.nix:418[0m]8;;
+
+[34mvimPlugins.ccc-nvim[39m ([32m2024-08-30[39m)
+  Homepage: ]8;;https://github.com/uga-rosa/ccc.nvim/[4mhttps://github.com/uga-rosa/ccc.nvim/[0m]8;;
+  Position: ]8;;file:///nix/store/fpivx4sjcp2vk4rp9nhliln5cwcp3kc6-source
+/pkgs/applications/editors/vim/plugins/generated.nix[4mpkgs/applications/editors/vim/plugins/generated.nix:1415[0m]8;;
+
+[34mvimPlugins.nvim-treesitter-parsers.sql[39m
+  Homepage: ]8;;https://github.com/derekstride/tree-sitter-sql[4mhttps://github.com/derekstride/tree-sitter-sql[0m]8;;
+  Position: ]8;;file:///nix/store/fpivx4sjcp2vk4rp9nhliln5cwcp3kc6-source
+/pkgs/applications/editors/vim/plugins/vim-utils.nix[4mpkgs/applications/editors/vim/plugins/vim-utils.nix:418[0m]8;;
+
+[34mvimPlugins.vim-visual-increment[39m ([32m2020-05-03[39m)
+  Homepage: ]8;;https://github.com/triglav/vim-visual-increment/[4mhttps://github.com/triglav/vim-visual-increment/[0m]8;;
+  Position: ]8;;file:///nix/store/fpivx4sjcp2vk4rp9nhliln5cwcp3kc6-source
+/pkgs/applications/editors/vim/plugins/generated.nix[4mpkgs/applications/editors/vim/plugins/generated.nix:17307[0m]8;;
+
+[34mvimPlugins.nvim-treesitter-parsers.corn[39m
+  Homepage: ]8;;https://github.com/jakestanger/tree-sitter-corn[4mhttps://github.com/jakestanger/tree-sitter-corn[0m]8;;
+  Position: ]8;;file:///nix/store/fpivx4sjcp2vk4rp9nhliln5cwcp3kc6-source
+/pkgs/applications/editors/vim/plugins/vim-utils.nix[4mpkgs/applications/editors/vim/plugins/vim-utils.nix:418[0m]8;;
+
+[34mvimPlugins.vim-dotenv[39m ([32m2022-05-15[39m)
+  Homepage: ]8;;https://github.com/tpope/vim-dotenv/[4mhttps://github.com/tpope/vim-dotenv/[0m]8;;
+  Position: ]8;;file:///nix/store/fpivx4sjcp2vk4rp9nhliln5cwcp3kc6-source
+/pkgs/applications/editors/vim/plugins/generated.nix[4mpkgs/applications/editors/vim/plugins/generated.nix:13775[0m]8;;
+
+[34mvimPlugins.nvim-treesitter-parsers.ninja[39m
+  Homepage: ]8;;https://github.com/alemuller/tree-sitter-ninja[4mhttps://github.com/alemuller/tree-sitter-ninja[0m]8;;
+  Position: ]8;;file:///nix/store/fpivx4sjcp2vk4rp9nhliln5cwcp3kc6-source
+/pkgs/applications/editors/vim/plugins/vim-utils.nix[4mpkgs/applications/editors/vim/plugins/vim-utils.nix:418[0m]8;;
+
+[34mvimPlugins.vim-code-dark[39m ([32m2024-05-21[39m)
+  Homepage: ]8;;https://github.com/tomasiser/vim-code-dark/[4mhttps://github.com/tomasiser/vim-code-dark/[0m]8;;
+  Position: ]8;;file:///nix/store/fpivx4sjcp2vk4rp9nhliln5cwcp3kc6-source
+/pkgs/applications/editors/vim/plugins/generated.nix[4mpkgs/applications/editors/vim/plugins/generated.nix:13391[0m]8;;
+
+[34mvimPlugins.other-nvim[39m ([32m2024-08-26[39m)
+  Homepage: ]8;;https://github.com/rgroli/other.nvim/[4mhttps://github.com/rgroli/other.nvim/[0m]8;;
+  Position: ]8;;file:///nix/store/fpivx4sjcp2vk4rp9nhliln5cwcp3kc6-source
+/pkgs/applications/editors/vim/plugins/generated.nix[4mpkgs/applications/editors/vim/plugins/generated.nix:9695[0m]8;;
+
+[34mvimPlugins.vim-lark-syntax[39m ([32m2023-10-10[39m)
+  Homepage: ]8;;https://github.com/lark-parser/vim-lark-syntax/[4mhttps://github.com/lark-parser/vim-lark-syntax/[0m]8;;
+  Position: ]8;;file:///nix/store/fpivx4sjcp2vk4rp9nhliln5cwcp3kc6-source
+/pkgs/applications/editors/vim/plugins/generated.nix[4mpkgs/applications/editors/vim/plugins/generated.nix:15001[0m]8;;
+
+[34mvimPlugins.gruvbox[39m ([32m2023-08-14[39m)
+  Homepage: ]8;;https://github.com/morhetz/gruvbox/[4mhttps://github.com/morhetz/gruvbox/[0m]8;;
+  Position: ]8;;file:///nix/store/fpivx4sjcp2vk4rp9nhliln5cwcp3kc6-source
+/pkgs/applications/editors/vim/plugins/generated.nix[4mpkgs/applications/editors/vim/plugins/generated.nix:4564[0m]8;;
+
+[34mvimPlugins.nvim-completion-manager[39m ([32m2018-07-27[39m)
+  Homepage: ]8;;https://github.com/roxma/nvim-completion-manager/[4mhttps://github.com/roxma/nvim-completion-manager/[0m]8;;
+  Position: ]8;;file:///nix/store/fpivx4sjcp2vk4rp9nhliln5cwcp3kc6-source
+/pkgs/applications/editors/vim/plugins/generated.nix[4mpkgs/applications/editors/vim/plugins/generated.nix:8411[0m]8;;
+
+[34mvimPlugins.tremor-vim[39m ([32m2021-09-07[39m)
+  Homepage: ]8;;https://github.com/tremor-rs/tremor-vim/[4mhttps://github.com/tremor-rs/tremor-vim/[0m]8;;
+  Position: ]8;;file:///nix/store/fpivx4sjcp2vk4rp9nhliln5cwcp3kc6-source
+/pkgs/applications/editors/vim/plugins/generated.nix[4mpkgs/applications/editors/vim/plugins/generated.nix:12214[0m]8;;
+
+[34mvimPlugins.vim-pets[39m ([32m2024-09-23[39m)
+  Homepage: ]8;;https://github.com/MeF0504/vim-pets/[4mhttps://github.com/MeF0504/vim-pets/[0m]8;;
+  Position: ]8;;file:///nix/store/fpivx4sjcp2vk4rp9nhliln5cwcp3kc6-source
+/pkgs/applications/editors/vim/plugins/generated.nix[4mpkgs/applications/editors/vim/plugins/generated.nix:15974[0m]8;;
+
+[34mvimPlugins.vim-simpledb[39m ([32m2020-10-02[39m)
+  Homepage: ]8;;https://github.com/ivalkeen/vim-simpledb/[4mhttps://github.com/ivalkeen/vim-simpledb/[0m]8;;
+  Position: ]8;;file:///nix/store/fpivx4sjcp2vk4rp9nhliln5cwcp3kc6-source
+/pkgs/applications/editors/vim/plugins/generated.nix[4mpkgs/applications/editors/vim/plugins/generated.nix:16550[0m]8;;
+
+[34mvimPlugins.vim-markdown-composer[39m ([32m2022-06-14[39m)
+  Homepage: ]8;;https://github.com/euclio/vim-markdown-composer/[4mhttps://github.com/euclio/vim-markdown-composer/[0m]8;;
+  Position: ]8;;file:///nix/store/fpivx4sjcp2vk4rp9nhliln5cwcp3kc6-source
+/pkgs/applications/editors/vim/plugins/generated.nix[4mpkgs/applications/editors/vim/plugins/generated.nix:15337[0m]8;;
+
+[34mvimPlugins.nvim-treesitter-parsers.vim[39m
+  Homepage: ]8;;https://github.com/neovim/tree-sitter-vim[4mhttps://github.com/neovim/tree-sitter-vim[0m]8;;
+  Position: ]8;;file:///nix/store/fpivx4sjcp2vk4rp9nhliln5cwcp3kc6-source
+/pkgs/applications/editors/vim/plugins/vim-utils.nix[4mpkgs/applications/editors/vim/plugins/vim-utils.nix:418[0m]8;;
+
+[34mvimPlugins.wal-vim[39m ([32m2020-11-08[39m)
+  Homepage: ]8;;https://github.com/dylanaraps/wal.vim/[4mhttps://github.com/dylanaraps/wal.vim/[0m]8;;
+  Position: ]8;;file:///nix/store/fpivx4sjcp2vk4rp9nhliln5cwcp3kc6-source
+/pkgs/applications/editors/vim/plugins/generated.nix[4mpkgs/applications/editors/vim/plugins/generated.nix:17860[0m]8;;
+
+[34mvimPlugins.vim-salve[39m ([32m2024-07-07[39m)
+  Homepage: ]8;;https://github.com/tpope/vim-salve/[4mhttps://github.com/tpope/vim-salve/[0m]8;;
+  Position: ]8;;file:///nix/store/fpivx4sjcp2vk4rp9nhliln5cwcp3kc6-source
+/pkgs/applications/editors/vim/plugins/generated.nix[4mpkgs/applications/editors/vim/plugins/generated.nix:16370[0m]8;;
+
+[34mvimPlugins.nvim-treesitter-parsers.usd[39m
+  Homepage: ]8;;https://github.com/ColinKennedy/tree-sitter-usd[4mhttps://github.com/ColinKennedy/tree-sitter-usd[0m]8;;
+  Position: ]8;;file:///nix/store/fpivx4sjcp2vk4rp9nhliln5cwcp3kc6-source
+/pkgs/applications/editors/vim/plugins/vim-utils.nix[4mpkgs/applications/editors/vim/plugins/vim-utils.nix:418[0m]8;;
+
+[34mvimPlugins.stan-vim[39m ([32m2023-12-13[39m)
+  Homepage: ]8;;https://github.com/eigenfoo/stan-vim/[4mhttps://github.com/eigenfoo/stan-vim/[0m]8;;
+  Position: ]8;;file:///nix/store/fpivx4sjcp2vk4rp9nhliln5cwcp3kc6-source
+/pkgs/applications/editors/vim/plugins/generated.nix[4mpkgs/applications/editors/vim/plugins/generated.nix:11104[0m]8;;
+
+[34mvimPlugins.vim-ormolu[39m ([32m2020-11-25[39m)
+  Homepage: ]8;;https://github.com/sdiehl/vim-ormolu/[4mhttps://github.com/sdiehl/vim-ormolu/[0m]8;;
+  Position: ]8;;file:///nix/store/fpivx4sjcp2vk4rp9nhliln5cwcp3kc6-source
+/pkgs/applications/editors/vim/plugins/generated.nix[4mpkgs/applications/editors/vim/plugins/generated.nix:15794[0m]8;;
+
+[34mvimPlugins.aylin-vim[39m ([32m2022-08-13[39m)
+  Homepage: ]8;;https://github.com/AhmedAbdulrahman/aylin.vim/[4mhttps://github.com/AhmedAbdulrahman/aylin.vim/[0m]8;;
+  Position: ]8;;file:///nix/store/fpivx4sjcp2vk4rp9nhliln5cwcp3kc6-source
+/pkgs/applications/editors/vim/plugins/generated.nix[4mpkgs/applications/editors/vim/plugins/generated.nix:1030[0m]8;;
