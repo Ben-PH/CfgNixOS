@@ -1,3 +1,4 @@
+local lspconfig = require("lspconfig")
 local on_attach = function(_, bufnr)
 
   local bufmap = function(keys, func)
@@ -26,7 +27,7 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-require('lspconfig').lua_ls.setup {
+lspconfig.lua_ls.setup {
     on_attach = on_attach,
     capabilities = capabilities,
 	root_dir = function()
@@ -41,20 +42,37 @@ require('lspconfig').lua_ls.setup {
     }
 }
 
-require('lspconfig').nil_ls.setup {
+lspconfig.nil_ls.setup {
     on_attach = on_attach,
     capabilities = capabilities,
     cmd = { lsp_path },
 }
-require('lspconfig').rust_analyzer.setup{
+lspconfig.rust_analyzer.setup{
     settings = {
         ["rust-analyzer"] = {
-            cargo = { allFeatures = true },
+            check = {allTargets = true },
+            cargo = { features = "all" },
+            -- cargo = { allFeatures = true },
+
+            diagnostics = {
+                enable = true;
+                experimental = {
+                    enable = true;
+                },
+            },
             checkOnSave = {
                 command = "clippy" -- Optionally use Clippy for checks
             },
         }
-    }
+    },
+    on_attach = on_attach,
+    capabilities = capabilities,
+    on_init = function(client)
+        local current_dir = vim.fn.fnamemodify(vim.fn.expand('%:p'), ':h')
+        client.config.root_dir = current_dir
+    end,
+    root_dir = function(fname)
+        -- Search for Cargo.toml in current or parent directories, fallback to cwd
+        return lspconfig.util.root_pattern("Cargo.toml")(fname) or vim.loop.cwd()
+    end,
 }
-
-require('lspconfig').hls.setup{}
