@@ -15,7 +15,7 @@
       "obsidian"
     ];
   imports = [
-    inputs.home-manager.nixosModules.home-manager
+    # inputs.home-manager.nixosModules.home-manager
     ../common/locale.nix
     ../common/xi3.nix
     ../common/me.nix

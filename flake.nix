@@ -43,7 +43,7 @@
           {
             inputs.home-manager.useGlobalPkgs = true;
             inputs.home-manager.useUserPackages = true;
-            inputs.home-manager.users.ben = import ./home.nix;
+            inputs.home-manager.users.ben = import ./machines/vbox/home.nix;
           }
         ];
         specialArgs = {inherit inputs;};
