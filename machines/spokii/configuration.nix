@@ -1,6 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
 {
   lib,
   inputs,
@@ -19,88 +16,35 @@
     ];
   imports = [
     inputs.home-manager.nixosModules.home-manager
-    ../locale.nix
-    ./boot.nix
+    ../common/locale.nix
+    ../common/xi3.nix
+    ../common/me.nix
+    ../common/bluetooth.nix
+    ../common/hm.nix
+    ../common/steam.nix
+    ../common/fonts.nix
+    ../common/core.nix
+    ../common/environment.nix
+    ../common/boot.nix
     ./hardware-configuration.nix
   ];
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-  security.polkit.enable = true;
-
-  hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
-  services.displayManager.defaultSession = "none+i3";
-
-  services.xserver = {
-    enable = true;
-    windowManager.i3.enable = true;
-    desktopManager.xterm.enable = false;
-    displayManager = {
-      #   startx.enable = true;
-      gdm.enable = true;
-      defaultSession = "none+i3";
-    };
-
-    # TODO?: Move this to HM
-    # windowManager.i3 = {
-    #   enable = true;
-    #   extraPackages = with pkgs; [
-    #     dmenu
-    #     i3status
-    #     i3lock
-    #   ];
-    #   configFile = ./i3config;
-    # };
-    videoDrivers = ["amdgpu"];
-
-    xkb = {
-      layout = "us";
-      variant = "dvorak";
-    };
-  };
-
-  fonts.fonts = [pkgs.dejavu_fonts];
 
   networking.hostName = "spokii";
+  services.xserver.videoDrivers = ["amdgpu"];
+
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # Enable networking
-  networking.networkmanager.enable = true;
 
-  # Configure console keymap
-  console.keyMap = "dvorak";
 
   environment = {
     systemPackages = with pkgs; [
-      # `nixos-rebuild` alternative
-      nh
-      # `find` alternative
-      fd
-      vim
       rustic
       mdadm
     ];
-    variables.EDITOR = "vim";
-  };
-  home-manager = {
-    useGlobalPkgs = true;
-    extraSpecialArgs = {inherit inputs outputs;};
-  };
-
-  # Sys level user settings
-  users.users.ben = {
-    isNormalUser = true;
-    description = "ben";
-    extraGroups = ["networkmanager" "wheel"];
-    packages = with pkgs; [
-      git
-    ];
-    shell = pkgs.nushell;
-
-    openssh.authorizedKeys.keys = [];
   };
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -110,10 +54,6 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-  programs.steam = {
-    enable = true;
-    gamescopeSession.enable = true;
-  };
   # programs.gamemode.enable = true;
 
   # List services that you want to enable:
@@ -133,11 +73,6 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  # use switch-to-configuration-ng
-  system.switch = {
-    enable = false;
-    enableNg = true;
-  };
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
