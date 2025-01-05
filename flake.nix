@@ -16,9 +16,14 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    disko = {
+      url = "github:nix-community/disko/latest";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
-  outputs = {self, ...} @ inputs: let
+  outputs = {self, disko, ...} @ inputs: let
     systems = [
       # "aarch64-linux"
       # "i686-linux"
@@ -39,6 +44,18 @@
             inputs.home-manager.useGlobalPkgs = true;
             inputs.home-manager.useUserPackages = true;
             inputs.home-manager.users.ben = import ./home.nix;
+          }
+        ];
+        specialArgs = {inherit inputs;};
+      };
+      kusanyk = inputs.nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./machines/kusanyk/configuration.nix
+          disko.nixosModules.disko
+          inputs.home-manager.nixosModules.home-manager
+          {
+            # home-manager.users.ben = import ./machines/kusanyk/home;
           }
         ];
         specialArgs = {inherit inputs;};
