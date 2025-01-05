@@ -15,7 +15,7 @@
   };
 
   imports = [
-    ../../../neovim
+    ./neovim
     ./firefox.nix
     ./nushell.nix
     ./i3.nix

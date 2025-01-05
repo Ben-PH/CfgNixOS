@@ -55,7 +55,7 @@
           disko.nixosModules.disko
           inputs.home-manager.nixosModules.home-manager
           {
-            # home-manager.users.ben = import ./machines/kusanyk/home;
+            home-manager.users.ben = ./machines/homes/ben.nix;
           }
         ];
         specialArgs = {inherit inputs;};
@@ -67,7 +67,7 @@
           # TODO: Make sense of the machine-sys-home divide
           inputs.home-manager.nixosModules.home-manager
           {
-            home-manager.users.ben = import ./machines/spokii/home;
+            home-manager.users.ben = import ./machines/homes/ben.nix;
           }
         ];
         specialArgs = {inherit inputs;};
