@@ -1,5 +1,3 @@
-# For now, this is ben@spokii and that's that. As things get complicated, I'll start moving things around
-# Naturally, this is a home-manager import
 {
   config,
   pkgs,
