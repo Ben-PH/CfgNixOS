@@ -14,6 +14,20 @@
     };
   };
 
+  programs.git = {
+    enable = true;
+    userName = "Ben-PH";
+    userEmail = "benphawke@gmail.com";
+  };
+
+  xsession.windowManager.i3 = {
+    enable = true;
+  };
+
+  programs.i3status-rust = {
+    enable = true;
+  };
+
   imports = [
     ./neovim
     ./firefox.nix
@@ -21,30 +35,8 @@
     ./i3.nix
   ];
 
-  # xsession.windowManager.i3 = {
-  #   enable = true;
-  #   # extraPackages = with pkgs; [
-  #   #   dmenu
-  #   #   i3status
-  #   #   i3lock
-  #   # ];
-  #   # configFile = ./i3config;
-  # };
-  wayland.windowManager.sway = {
-    enable = true;
-    config = rec {
-      # modifier = "Mod4";
-      # Use kitty as default terminal
-      # terminal = "alacritty";
-      # startup = [
-      #   # Launch Firefox on start
-      #   {command = "firefox";}
-      # ];
-    };
-  };
-
   home.packages = with pkgs; [
-    # neofetch -- use `nix shell nixpkgs#neofetch -c neofetch` instead
+    neofetch
     yazi
     cargo
     zellij
@@ -123,20 +115,6 @@
     # haskellPackages.stack
     # haskell-language-server
   ];
-
-  # basic configuration of git, please change to your own
-  programs.git = {
-    enable = true;
-    userName = "Ben-PH";
-    userEmail = "benphawke@gmail.com";
-  };
-
-  xsession.windowManager.i3 = {
-    enable = true;
-  };
-  programs.i3status-rust = {
-    enable = true;
-  };
 
   # TODO
   # fonts.fontconfig = {
