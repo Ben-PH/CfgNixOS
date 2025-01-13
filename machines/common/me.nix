@@ -13,6 +13,7 @@
     extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
       git
+      freecad
     ];
     shell = pkgs.nushell;
 
