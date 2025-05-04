@@ -13,6 +13,9 @@
       # `find` alternative
       fd
       vim
+      gnupg
+      pinentry
+
     ];
     variables.EDITOR = "vim";
   };
