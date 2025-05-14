@@ -31,8 +31,12 @@
   environment = {
     systemPackages = with pkgs; [
       vim
+      curl
+      htop
+      ripgrep
       git
-      disko
+      gitui
+      pkgs.latest.disko
       parted
     ];
     variables.EDITOR = "vim";
