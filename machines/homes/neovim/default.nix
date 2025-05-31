@@ -22,6 +22,7 @@
         toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
       in [
         haskell-vim
+        diffview-nvim
         {
           plugin = nvim-autopairs;
           config = toLua "require(\"nvim-autopairs\").setup()";
@@ -77,6 +78,7 @@
         {
           plugin = nvim-treesitter.withPlugins (p: [
             p.tree-sitter-nix
+            p.tree-sitter-nim
             p.tree-sitter-rust
             p.tree-sitter-vim
             p.tree-sitter-bash

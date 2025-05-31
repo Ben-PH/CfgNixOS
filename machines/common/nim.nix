@@ -8,11 +8,10 @@
 }: {
   environment = {
     systemPackages = with pkgs; [
-      # `nixos-rebuild` alternative
-      nh
-      # `find` alternative
-      fd
-      vim
+      nim
+      nimlangserver
+      nimlsp
+      nimble
     ];
     variables.EDITOR = "vim";
   };

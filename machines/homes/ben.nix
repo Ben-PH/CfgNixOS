@@ -34,12 +34,19 @@
   ];
 
   home.packages = with pkgs; [
+    vscode
     neofetch
     yazi
+    broot
     cargo
     zellij
 
     flameshot
+
+
+    # 3d printing stuff
+    prusa-slicer
+    orca-slicer
 
     # needs unfree. done in configuration.nix at time of writing
     vesktop

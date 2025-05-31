@@ -42,16 +42,27 @@ lspconfig.lua_ls.setup {
     }
 }
 
-lspconfig.nil_ls.setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-    cmd = { lsp_path },
+-- lspconfig.nil_ls.setup {
+--     on_attach = on_attach,
+--     capabilities = capabilities,
+--     cmd = { lsp_path },
+-- }
+lspconfig.nim_langserver.setup{
+  settings = {
+    nim = {
+      nimsuggestPath = "/run/current-system/sw/bin/nimsuggest",
+      nimbleDir = "/home/ben/.nimble",
+    }
+  }
 }
 lspconfig.rust_analyzer.setup{
     settings = {
         ["rust-analyzer"] = {
-            check = {allTargets = true },
-            cargo = { features = "all" },
+
+            procMacro = {enable = true },
+            checkOnSave = {allTargets = false },
+            cargo = { target = "xtensa-esp32s3-none-elf" },
+            cargo = { features = "esp32s3" },
             -- cargo = { allFeatures = true },
 
             diagnostics = {
@@ -61,6 +72,10 @@ lspconfig.rust_analyzer.setup{
                 },
             },
             checkOnSave = {
+	
+                -- allFeatures = true,
+                -- allTargets = true,
+                -- allTargets = true,
                 command = "clippy" -- Optionally use Clippy for checks
             },
         }

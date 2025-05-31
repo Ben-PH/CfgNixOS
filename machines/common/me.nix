@@ -7,10 +7,14 @@
   ...
 }: {
   # Sys level user settings
+    virtualisation.docker.rootless = {
+			enable = true;
+			setSocketVariable = true;
+		};
   users.users.ben = {
     isNormalUser = true;
     description = "ben";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "docker"];
     packages = with pkgs; [
       git
       freecad

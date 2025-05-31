@@ -32,3 +32,4 @@ $env.PATH = ($env.PATH |
   prepend /home/ben/.apps |
   append /usr/bin/env
 )
+$env.NIMBLE_DIR = "/home/ben/.nimble"

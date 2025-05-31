@@ -13,12 +13,14 @@
       "steam-original"
       "steam-run"
       "obsidian"
+      "vscode"
     ];
   imports = [
     # inputs.home-manager.nixosModules.home-manager
     ../common/locale.nix
     ../common/xi3.nix
     ../common/me.nix
+    ../common/nim.nix
     ../common/bluetooth.nix
     ../common/hm.nix
     ../common/steam.nix
@@ -31,6 +33,11 @@
 
   networking.hostName = "spokii";
   services.xserver.videoDrivers = ["amdgpu"];
+  # services.immich = {
+  #   enable = true;
+  #   port = 2283;
+  #   # mediaLocation = "/home/ben/foobar";
+  # };
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
