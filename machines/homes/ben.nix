@@ -80,7 +80,7 @@
     rofi
     dunst
     papirus-icon-theme
-    nerdfonts
+    # nerdfonts
 
     # networking tools
     # mtr # A network diagnostic tool

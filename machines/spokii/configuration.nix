@@ -20,7 +20,6 @@
     ../common/locale.nix
     ../common/xi3.nix
     ../common/me.nix
-    ../common/nim.nix
     ../common/bluetooth.nix
     ../common/hm.nix
     ../common/steam.nix
