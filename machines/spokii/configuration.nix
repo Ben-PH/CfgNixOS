@@ -19,8 +19,13 @@
     ];
   imports = [
     inputs.home-manager.nixosModules.home-manager
-    ../locale.nix
-    ./boot.nix
+    ../common/locale.nix
+    ../common/boot.nix
+    ../common/ben.nix
+    ../common/hm.nix
+    ../common/steam.nix
+    ../common/core.nix
+    ../common/environment.nix
     ./hardware-configuration.nix
   ];
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -58,7 +63,7 @@
     };
   };
 
-  fonts.fonts = [pkgs.dejavu_fonts];
+  fonts.packages = [pkgs.dejavu_fonts];
 
   networking.hostName = "spokii";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -90,18 +95,18 @@
     extraSpecialArgs = {inherit inputs outputs;};
   };
 
-  # Sys level user settings
-  users.users.ben = {
-    isNormalUser = true;
-    description = "ben";
-    extraGroups = ["networkmanager" "wheel"];
-    packages = with pkgs; [
-      git
-    ];
-    shell = pkgs.nushell;
-
-    openssh.authorizedKeys.keys = [];
-  };
+  # # Sys level user settings
+  # users.users.ben = {
+  #   isNormalUser = true;
+  #   description = "ben";
+  #   extraGroups = ["networkmanager" "wheel"];
+  #   packages = with pkgs; [
+  #     git
+  #   ];
+  #   shell = pkgs.nushell;
+  #
+  #   openssh.authorizedKeys.keys = [];
+  # };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

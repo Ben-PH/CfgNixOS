@@ -30,6 +30,18 @@
   in {
     formatter = forAllSystems (system: inputs.nixpkgs.legacyPackages.${system}.alejandra);
     nixosConfigurations = {
+      spokii = inputs.nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./machines/spokii/configuration.nix
+          # TODO: Make sense of the machine-sys-home divide
+          inputs.home-manager.nixosModules.home-manager
+          {
+            home-manager.users.ben = import ./machines/homes/ben.nix;
+          }
+        ];
+        specialArgs = {inherit inputs;};
+      };
       vbox = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
@@ -39,18 +51,6 @@
             inputs.home-manager.useGlobalPkgs = true;
             inputs.home-manager.useUserPackages = true;
             inputs.home-manager.users.ben = import ./home.nix;
-          }
-        ];
-        specialArgs = {inherit inputs;};
-      };
-      spokii = inputs.nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./machines/spokii/configuration.nix
-          # TODO: Make sense of the machine-sys-home divide
-          inputs.home-manager.nixosModules.home-manager
-          {
-            home-manager.users.ben = import ./machines/spokii/home;
           }
         ];
         specialArgs = {inherit inputs;};

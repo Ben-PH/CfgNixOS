@@ -10,7 +10,7 @@
 }: {
   imports = [
     inputs.home-manager.nixosModules.home-manager
-    ../locale.nix
+    ../common/locale.nix
     ./boot.nix
     ./hardware-configuration.nix
   ];

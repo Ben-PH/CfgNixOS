@@ -6,15 +6,7 @@
 }: {
   programs.firefox = {
     enable = true;
-    profiles.ben = {
-      bookmarks = [
-        # {
-        #   name = "";
-        #   tags = [ ];
-        #   keyword = "";
-        #   url = "https://";
-        # }
-      ];
+    profiles.default = {
       settings = {
       };
       search.engines = {
