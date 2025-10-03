@@ -1,5 +1,3 @@
-# For now, this is ben@spokii and that's that. As things get complicated, I'll start moving things around
-# Naturally, this is a home-manager import
 {
   config,
   pkgs,
@@ -13,38 +11,28 @@
       variant = "dvorak";
     };
   };
+  programs.git = {
+    enable = true;
+    userName = "Ben-PH";
+    userEmail = "benphawke@gmail.com";
+  };
 
+  xsession.windowManager.i3 = {
+    enable = true;
+  };
+
+  programs.i3status-rust = {
+    enable = true;
+  };
   imports = [
-    ../../../neovim
+    ./neovim
     ./firefox.nix
     ./nushell.nix
     ./i3.nix
   ];
 
-  # xsession.windowManager.i3 = {
-  #   enable = true;
-  #   # extraPackages = with pkgs; [
-  #   #   dmenu
-  #   #   i3status
-  #   #   i3lock
-  #   # ];
-  #   # configFile = ./i3config;
-  # };
-  wayland.windowManager.sway = {
-    enable = true;
-    config = rec {
-      # modifier = "Mod4";
-      # Use kitty as default terminal
-      # terminal = "alacritty";
-      # startup = [
-      #   # Launch Firefox on start
-      #   {command = "firefox";}
-      # ];
-    };
-  };
-
   home.packages = with pkgs; [
-    # neofetch -- use `nix shell nixpkgs#neofetch -c neofetch` instead
+    neofetch
     yazi
     cargo
     zellij
@@ -53,6 +41,7 @@
 
     # needs unfree. done in configuration.nix at time of writing
     vesktop
+
     # Needed for LM studio
     appimage-run
 
@@ -83,7 +72,7 @@
     rofi
     dunst
     papirus-icon-theme
-    nerdfonts
+    # nerdfonts
 
     # networking tools
     # mtr # A network diagnostic tool
@@ -124,19 +113,6 @@
     # haskell-language-server
   ];
 
-  # basic configuration of git, please change to your own
-  programs.git = {
-    enable = true;
-    userName = "Ben-PH";
-    userEmail = "benphawke@gmail.com";
-  };
-
-  xsession.windowManager.i3 = {
-    enable = true;
-  };
-  programs.i3status-rust = {
-    enable = true;
-  };
 
   # TODO
   # fonts.fontconfig = {
