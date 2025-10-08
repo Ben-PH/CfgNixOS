@@ -11,19 +11,23 @@
       variant = "dvorak";
     };
   };
-  programs.git = {
-    enable = true;
-    userName = "Ben-PH";
-    userEmail = "benphawke@gmail.com";
+  programs = {
+    git = {
+      enable = true;
+      userName = "Ben-PH";
+      userEmail = "benphawke@gmail.com";
+    };
+    i3status-rust = {
+      enable = true;
+    };
+    # Let home Manager install and manage itself.
+    home-manager.enable = true;
   };
 
   xsession.windowManager.i3 = {
     enable = true;
   };
 
-  programs.i3status-rust = {
-    enable = true;
-  };
   imports = [
     ./neovim
     ./firefox.nix
@@ -130,6 +134,4 @@
   # changes in each release.
   home.stateVersion = "23.11";
 
-  # Let home Manager install and manage itself.
-  programs.home-manager.enable = true;
 }
