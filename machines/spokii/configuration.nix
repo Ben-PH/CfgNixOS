@@ -32,18 +32,20 @@
   security.polkit.enable = true;
 
   hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
-  services.displayManager.defaultSession = "none+i3";
+  services = {
+    blueman.enable = true;
+    displayManager.defaultSession = "none+i3";
 
-  services.xserver = {
-    enable = true;
-    windowManager.i3.enable = true;
-    desktopManager.xterm.enable = false;
-    displayManager = {
-      #   startx.enable = true;
-      gdm.enable = true;
-      defaultSession = "none+i3";
-    };
+    xserver = {
+      enable = true;
+      windowManager.i3.enable = true;
+      desktopManager.xterm.enable = false;
+      displayManager = {
+        #   startx.enable = true;
+        gdm.enable = true;
+      };
+
+  };
 
     # TODO?: Move this to HM
     # windowManager.i3 = {

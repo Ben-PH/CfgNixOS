@@ -16,15 +16,22 @@
   ];
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  networking.hostName = "vbox";
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking = {
+    # Configure network proxy if necessary
+    # proxy.default = "http://user:password@proxy:port/";
+    # proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+    # Enable networking
+    networkmanager.enable = true;
+    # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+    hostName = "vbox";
+    # Open ports in the firewall.
+    firewall.allowedTCPPorts = [22];
+    # firewall.allowedUDPPorts = [ ... ];
+    # Or disable the firewall altogether.
+    # firewall.enable = false;
+  };
 
-  # Enable networking
-  networking.networkmanager.enable = true;
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -78,11 +85,6 @@
     };
   };
 
-  # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [22];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

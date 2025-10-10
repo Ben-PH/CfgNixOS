@@ -48,9 +48,11 @@
           ./machines/vbox/configuration.nix
           inputs.home-manager.nixosModules.home-manager
           {
-            inputs.home-manager.useGlobalPkgs = true;
-            inputs.home-manager.useUserPackages = true;
-            inputs.home-manager.users.ben = import ./home.nix;
+            inputs.home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.ben = import ./home.nix;
+            };
           }
         ];
         specialArgs = {inherit inputs;};
