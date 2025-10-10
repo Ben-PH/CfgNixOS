@@ -42,6 +42,19 @@
         ];
         specialArgs = {inherit inputs;};
       };
+      korolkishok = inputs.nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./machines/korolkishok/configuration.nix
+          # TODO: Make sense of the machine-sys-home divide
+          inputs.home-manager.nixosModules.home-manager
+          {
+            home-manager.users.ben = import ./machines/homes/ben.nix;
+            home-manager.users.gaelle = import ./machines/homes/gaelle.nix;
+          }
+        ];
+        specialArgs = {inherit inputs;};
+      };
       vbox = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
