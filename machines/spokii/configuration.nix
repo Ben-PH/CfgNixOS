@@ -44,8 +44,8 @@
         #   startx.enable = true;
         gdm.enable = true;
       };
+      videoDrivers = ["amdgpu"];
 
-  };
 
     # TODO?: Move this to HM
     # windowManager.i3 = {
@@ -57,11 +57,11 @@
     #   ];
     #   configFile = ./i3config;
     # };
-    videoDrivers = ["amdgpu"];
 
-    xkb = {
-      layout = "us";
-      variant = "dvorak";
+      xkb = {
+        layout = "us";
+        variant = "dvorak";
+      };
     };
   };
 

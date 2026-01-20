@@ -36,6 +36,7 @@
   ];
 
   home.packages = with pkgs; [
+    freecad
     neofetch
     yazi
     cargo
