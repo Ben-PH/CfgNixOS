@@ -43,9 +43,11 @@
     zellij
 
     flameshot
+    nixVersions.latest
 
     # needs unfree. done in configuration.nix at time of writing
     vesktop
+    # equibop
 
     # Needed for LM studio
     appimage-run
