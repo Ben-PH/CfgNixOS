@@ -66,7 +66,7 @@
     };
   };
 
-  fonts.packages = [pkgs.dejavu_fonts];
+  fonts.packages = [pkgs.dejavu_fonts pkgs.nerd-fonts.symbols-only];
 
   networking.hostName = "spokii";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.

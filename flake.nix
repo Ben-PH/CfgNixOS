@@ -3,40 +3,27 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    nvf.url = "github:notashelf/nvf";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # dora-rs = {
-    #   url = "path:///home/ben/dora_pad/dora";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = {self, ...} @ inputs: let
-    systems = [
-      # "aarch64-linux"
-      # "i686-linux"
-      "x86_64-linux"
-      # "aarch64-darwin"
-      # "x86_64-darwin"
-    ];
-    forAllSystems = inputs.nixpkgs.lib.genAttrs systems;
-  in {
-    formatter = forAllSystems (system: inputs.nixpkgs.legacyPackages.${system}.alejandra);
+  outputs = {self, nixpkgs, home-manager, nvf, ...} @ inputs: {
     nixosConfigurations = {
       spokii = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./machines/spokii/configuration.nix
-          # TODO: Make sense of the machine-sys-home divide
           inputs.home-manager.nixosModules.home-manager
           {
             home-manager.users.ben = import ./machines/homes/ben.nix;
+            home-manager.extraSpecialArgs = {inherit inputs;};
           }
         ];
         specialArgs = {inherit inputs;};
