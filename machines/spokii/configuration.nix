@@ -29,6 +29,10 @@
     ../common/environment.nix
     ./hardware-configuration.nix
   ];
+  boot.supportedFilesystems = ["zfs"];
+  # generated with `cksum /etc/machine-id | cut -d ' ' -f1 | xargs printf "%08x"`
+  # on another machine, will need to run `=pool import -f`
+  networking.hostId = "3863057b"; 
   nix.settings.experimental-features = ["nix-command" "flakes"];
   security.polkit.enable = true;
 
