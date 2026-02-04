@@ -17,6 +17,7 @@
       "steam-run"
       "steam-unwrapped"
       "obsidian"
+      "lmstudio"
     ];
   imports = [
     inputs.home-manager.nixosModules.home-manager
