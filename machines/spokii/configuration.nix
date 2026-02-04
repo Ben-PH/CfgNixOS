@@ -33,7 +33,24 @@
   security.polkit.enable = true;
 
   hardware.bluetooth.enable = true;
+# systemd.tmpfiles.rules = [
+# "d /home/ben/immich 755 immich immich -"
+# ];
+# users.users.immich = {
+# isSystemUser = true;
+# group = "immich";
+# };
   services = {
+    # immich = {
+    #   enable = true;
+    #   host = "localhost";
+    #   port = 2283;
+    #   openFirewall = false;
+    #   user = "immich";
+    #   group = "immich";
+    #   mediaLocation = "/home/ben/immmich"; # change this to HDD when space starts getting low
+    #
+    # };
     blueman.enable = true;
     displayManager.defaultSession = "none+i3";
 
