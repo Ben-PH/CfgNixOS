@@ -24,6 +24,7 @@
     ../common/locale.nix
     ../common/boot.nix
     ../common/ben.nix
+    ../common/tailscale.nix
     ../common/hm.nix
     ../common/steam.nix
     ../common/core.nix
