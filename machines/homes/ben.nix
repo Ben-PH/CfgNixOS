@@ -188,7 +188,6 @@
     yazi
     cargo
     zellij
-    lmstudio
 
     flameshot
     nixVersions.latest
