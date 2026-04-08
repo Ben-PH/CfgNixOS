@@ -63,6 +63,7 @@
     ethtool
     pciutils # lspci
     usbutils # lsusb
+gnumake
   ];
 
   # basic configuration of git, please change to your own
@@ -70,6 +71,9 @@
     enable = true;
     userName = "Ben-PH";
     userEmail = "benphawke@gmail.com";
+    extraConfig = {
+      credenttial.helpor = "";
+    };
   };
 
   # This value determines the home Manager release that your

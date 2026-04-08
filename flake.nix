@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
-    nvf.url = "github:notashelf/nvf";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -14,7 +13,7 @@
     };
   };
 
-  outputs = {self, nixpkgs, home-manager, nvf, ...} @ inputs: {
+  outputs = {self, nixpkgs, home-manager, ...} @ inputs: {
     nixosConfigurations = {
       spokii = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
