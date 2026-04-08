@@ -27,3 +27,9 @@ opt.iskeyword:append("-")
 opt.swapfile = false
 opt.backup = false
 opt.undofile = true
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "lua", "rust", "nix", "bash", "python", "json", "vim", "wgsl" },
+  callback = function(event)
+    pcall(vim.treesitter.start, event.buf)
+  end,
+})

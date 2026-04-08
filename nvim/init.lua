@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+
 local config = vim.fn.stdpath("config")
 package.path = package.path
   .. ";" .. config .. "/lua/?.lua"
