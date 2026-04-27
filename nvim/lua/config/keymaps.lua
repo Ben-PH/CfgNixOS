@@ -1,10 +1,16 @@
 local M = {}
 
--- General mappings: registered once at startup
-M.general = {
+  -- General mappings: registered once at startup
+  M.general = {
+    -- nvim
+  { "<A-w>", "<cmd>:w<CR>",  desc = "write buffer", hidden = true },
   -- Telescope
-  { "<A-f>", "<cmd>Telescope find_files<CR>",  desc = "Telescope: find files" },
-  { "<A-g>", "<cmd>Telescope live_grep<CR>",   desc = "Telescope: grep" },
+  { "<A-l>", "<cmd>Telescope find_files<CR>",  desc = "Telescope: find files" },
+  { "<A-r>", "<cmd>Telescope live_grep<CR>",   desc = "Telescope: (rip)grep" },
+
+  -- qflist
+  { "<A-n>", "<cmd>:cnext<CR>",  desc = "QF: next" },
+  { "<A-N>", "<cmd>:cprevious<CR>",  desc = "QF: provious" },
 
   -- Harpoon
   { "<leader>ha", function() require("harpoon"):list():append() end,                                desc = "Harpoon: add file" },
@@ -21,7 +27,7 @@ M.general = {
   { "<A-,>", "<cmd>BufferPrevious<CR>",        desc = "Buffer: previous",  hidden = true },
   { "<A-.>", "<cmd>BufferNext<CR>",            desc = "Buffer: next",      hidden = true },
   { "<A-c>", "<cmd>BufferClose<CR>",           desc = "Buffer: close" },
-  { "<A-p>", "<cmd>BufferPick<CR>",            desc = "Buffer: pick" },
+  { "<A-b>", "<cmd>BufferPick<CR>",            desc = "Buffer: pick" },
   { "<A-1>", "<cmd>BufferGoto 1<CR>",          hidden = true },
   { "<A-2>", "<cmd>BufferGoto 2<CR>",          hidden = true },
   { "<A-3>", "<cmd>BufferGoto 3<CR>",          hidden = true },
@@ -30,7 +36,7 @@ M.general = {
   { "<A-0>", "<cmd>BufferLast<CR>",            hidden = true },
 
   -- Which-key
-  { "<A-w>", function() require("which-key").show() end, desc = "Which-key: show", mode = "nixsotc", hidden = true },
+  { "<A-W>", function() require("which-key").show() end, desc = "Which-key: show", mode = "nixsotc", hidden = true },
 
   -- Trouble
   { "<leader>tt", "<cmd>Trouble diagnostics toggle<CR>",        desc = "Trouble: diagnostics" },
@@ -49,7 +55,6 @@ M.lsp = function(bufnr)
     { "<A-a>",   vim.lsp.buf.code_action,                  desc = "LSP: code action",         buffer = bufnr },
     { "<A-d>",   vim.diagnostic.goto_next,                 desc = "Diagnostic: next",         buffer = bufnr },
     { "<A-D>",   vim.diagnostic.goto_prev,                 desc = "Diagnostic: previous",     buffer = bufnr },
-    { "<A-h>",   vim.lsp.buf.hover,                        desc = "LSP: hover docs",          buffer = bufnr },
     { "<A-C-d>", "<cmd>Telescope diagnostics bufnr=0<CR>", desc = "Diagnostic: buffer list",  buffer = bufnr },
     { "<leader>rs", ":LspRestart<CR>",                     desc = "LSP: restart",             buffer = bufnr },
     { "<leader>rn", vim.lsp.buf.rename,                    desc = "LSP: rename",              buffer = bufnr },
